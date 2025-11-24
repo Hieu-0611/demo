@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Poppins", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* === Brand === */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff4b2b, #ff7eb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Center Links === */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  cursor: pointer;
+}
+
+.navbar-center a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar-center a:hover,
+.navbar-center a.active {
+  color: #ff4b2b;
+  transform: translateY(-1px);
+}
+
+/* === Right Section === */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* === Notification === */
+.notif-icon {
+  position: relative;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.notif-icon:hover {
+  color: #ff4b2b;
+}
+
+.notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 10px;
+  height: 10px;
+  background: #ff4b2b;
+  border-radius: 50%;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* === Greeting === */
+.greeting {
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* === Avatar === */
+.avatar-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar,
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 75, 43, 0.25);
+  box-shadow: 0 0 0 3px rgba(255, 75, 43, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.avatar:hover,
+.nav-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px rgba(255, 75, 43, 0.25);
+}
+
+/* === Dropdown === */
+.dropdown-menu {
+  position: absolute;
+  top: 115%;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 160px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+  animation: dropdownFade 0.25s ease forwards;
+  transform-origin: top right;
+  z-index: 200;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: scale(0.9) translateY(-4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #444;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #fff0f0;
+  color: #ff4b2b;
+}
+
+/* === Notification Dropdown === */
+.notif-dropdown {
+  position: absolute;
+  right: 80px;
+  top: 70px;
+  width: 320px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 90, 130, 0.25);
+  padding: 12px;
+  z-index: 999;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notif-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 8px;
+}
+
+.notif-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.notif-content {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.notif-actions button {
+  border: none;
+  background: #ffeaf0;
+  color: #ff4b7d;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px 2px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.notif-actions button:hover {
+  background: #ff4b7d;
+  color: white;
+}
+
+.match-text {
+  font-weight: bold;
+  color: #ff4b7d;
+}
+
+/* ============================================ */
+/* === RESPONSIVE MOBILE === */
+/* ============================================ */
+
+/* Tablet nhỏ và điện thoại lớn */
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .navbar-center {
+    gap: 15px;
+  }
+
+  .navbar-center a {
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .notif-dropdown {
+    right: 10px;
+    width: 280px;
+  }
+}
+
+/* Điện thoại (portrait) */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .brand img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  /* Ẩn text của menu, chỉ giữ icon */
+  .navbar-center {
+    gap: 10px;
+  }
+
+  .navbar-center a {
+    font-size: 0;
+    padding: 8px;
+  }
+
+  .navbar-center a svg {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  /* Avatar nhỏ lại */
+  .avatar,
+  .nav-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+  .notif-icon {
+    font-size: 16px;
+  }
+
+  /* Notification dropdown full width mobile */
+  .notif-dropdown {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    border-radius: 0;
+    max-height: 70vh;
+  }
+
+  .dropdown-menu {
+    min-width: 140px;
+  }
+}
+
+/* Điện thoại siêu nhỏ */
+@media (max-width: 380px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-center {
+    gap: 5px;
+  }
+
+  .navbar-center a {
+    padding: 6px;
+  }
+
+  .navbar-center a svg {
+    font-size: 16px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .avatar,
+  .nav-avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.dot-badge {
+  width: 10px;
+  height: 10px;
+  background: #ff3b3b;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+  box-shadow: 0 0 6px rgba(255, 60, 60, 0.8);
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
