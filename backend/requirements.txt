@@ -1,7 +1,8 @@
 fastapi==0.115.0
 uvicorn==0.30.1
-SQLAlchemy==2.0.23
-mysql-connector-python==9.0.0
+SQLAlchemy==2.0.36  # 👈 Nâng lên bản mới nhất để fix lỗi Python 3.13
+pymysql==1.1.0
+cryptography==42.0.5
 pydantic==2.9.2
 pydantic[email]
 python-jose==3.3.0
@@ -10,5 +11,5 @@ bcrypt==4.0.1
 python-multipart==0.0.9
 jinja2==3.1.4
 requests==2.32.3
-websockets
-pymysql==1.1.0
+websockets==12.0
+typing_extensions>=4.6.0 # 👈 Thêm cái này cho chắc
